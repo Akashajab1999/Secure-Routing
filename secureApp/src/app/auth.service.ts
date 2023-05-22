@@ -39,7 +39,7 @@ export class AuthService {
   logIn(email:string,password:string):boolean{
     const user=this.users.find((u)=>u.email ===email && u.password===password)
     if(user){
-      
+      console.log(user.role);
       localStorage.setItem("role",user.role)
       return true;
     }
