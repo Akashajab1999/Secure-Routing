@@ -15,7 +15,7 @@ export class LoginComponent {
     password: '',
     
   }
-  loggedIn:any;
+  loggedIn:boolean=false;
   role:any;
  
   constructor(private svc :AuthService,private router:Router){}
@@ -27,7 +27,7 @@ export class LoginComponent {
     console.log("login button is clicked");
     this.loggedIn = true;
     console.log("user is valid"); 
-    this.router.navigate(['/aboutUS']);
+   
     return true;
     }
     else{

@@ -16,7 +16,7 @@ export class RoutingComponent implements OnInit {
   ngOnInit(): void {
     
 
-    if (this.role=="employee"){
+    if (this.role=="Employee"){
       this.statusAkash=true;
       
     }

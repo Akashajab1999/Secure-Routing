@@ -15,25 +15,19 @@ export class LoginComponent {
     password: '',
     
   }
-  loggedIn:boolean=false;
+  loggedIn:any;
   role:any;
  
   constructor(private svc :AuthService,private router:Router){}
 
  
   
-  logIn(form:any):boolean{
-   if(this.svc.logIn(this.user.email,this.user.password)){
-    console.log("login button is clicked");
-    this.loggedIn = true;
-    console.log("user is valid"); 
-   
-    return true;
-    }
-    else{
-      console.log("user is Invalid"); 
-      return false;
-    }
+  logIn(form:any){
+    this.svc.logIn(this.user).subscribe((response)=>{
+    console.log(response.token);
+    localStorage.setItem("jwt",response.token);
+    console.log(response);
+  })
 
   }
 
