@@ -5,26 +5,28 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './routing.component.html',
   styleUrls: ['./routing.component.css']
 })
-export class RoutingComponent implements OnInit {
- 
-  role=localStorage.getItem("role");
-  statusAkash=false;
-  statusRushikesh=false;
- 
- 
- 
-  ngOnInit(): void {
-    
+export class RoutingComponent implements OnInit{
+  role = localStorage.getItem("role");
+  adminRole=false;
+  customerRole=false;
 
-    if (this.role=="employee"){
-      this.statusAkash=true;
-      
-    }
-    if(this.role=="customer"){
-      this.statusRushikesh=true;
- 
-    }
+  
+  
+  ngOnInit(): void {
+   if(this.role=="Admin"){
+    this.adminRole=true;
+   }
+   if(this.role=="Customer"){
+    this.customerRole=true;
+    
+   }
+    
   }
+ 
+  
+  
+ 
+ 
   
   
  

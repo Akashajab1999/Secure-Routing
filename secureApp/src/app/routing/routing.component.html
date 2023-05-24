@@ -1,10 +1,10 @@
 
 
 <div>
-<a  [routerLink]="['/home']">Home</a>
+<a *ngIf="customerRole" [routerLink]="['/home']">Home</a>
 <br>
-<a  [routerLink]="['/aboutUs']">aboutUs</a>
+<a  *ngIf="customerRole" [routerLink]="['/aboutUs']">aboutUs</a>
 <br>
-<a  [routerLink]="['/product']">Product</a>
+<a *ngIf="adminRole" [routerLink]="['/privacy']">Product</a>
 <router-outlet></router-outlet>
 </div>

@@ -10,7 +10,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes : Routes=[
   //{path:'' ,redirectTo:'/login' ,pathMatch:'full'},
@@ -18,7 +17,6 @@ const routes : Routes=[
   {path:'home',component:HomeComponent},
   {path:'product' ,component:ProductComponent},
   {path:'aboutUs' ,component:AboutUsComponent},
-  {path:'privacy' ,component:PrivacyComponent},
 
 ]
 
@@ -32,8 +30,7 @@ const routes : Routes=[
     HomeComponent,
     RoutingComponent,
     ProductComponent,
-    AboutUsComponent,
-    PrivacyComponent
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
