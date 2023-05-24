@@ -24,7 +24,10 @@ export class LoginComponent {
   
   logIn(){
     this.svc.logIn(this.user).subscribe((response)=>{
-    console.log(response);
+    
+   localStorage.setItem("jwt",response.token);
+   this.loggedIn=true;
+   console.log(response.role);
   })
 
   }

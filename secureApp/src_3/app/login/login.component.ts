@@ -12,7 +12,7 @@ export class LoginComponent {
 
   user:User={
     email: '',
-    password: ''
+    password: '',
     
   }
   loggedIn:any;
@@ -20,15 +20,13 @@ export class LoginComponent {
  
   constructor(private svc :AuthService,private router:Router){}
 
- //this return 
+ 
   
-  logIn(){
+  logIn(form:any){
     this.svc.logIn(this.user).subscribe((response)=>{
-    
-   //localStorage.setItem("jwt",response.token);
-   localStorage.setItem("role",response.role);
-  //  this.loggedIn=true;
-   console.log(response.role);
+    console.log(response.token);
+    localStorage.setItem("jwt",response.token);
+    console.log(response);
   })
 
   }
