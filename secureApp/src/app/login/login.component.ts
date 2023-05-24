@@ -26,11 +26,14 @@ export class LoginComponent {
     this.svc.logIn(this.user).subscribe((response)=>{
     console.log(response.token);
     localStorage.setItem("jwt",response.token);
+    const role=this.svc.getRoleFromLSAToken();
+    console.log(role);
     console.log(this.user);
     if(this.user){
       this.validUser=true;
-      
+      console.log("valid user");
     }
+    
     console.log(response);
   })
 

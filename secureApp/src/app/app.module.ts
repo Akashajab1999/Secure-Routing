@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 const routes : Routes=[
   //{path:'' ,redirectTo:'/login' ,pathMatch:'full'},
@@ -41,7 +42,7 @@ const routes : Routes=[
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [JwtHelperService,{provide : JWT_OPTIONS,useValue:JWT_OPTIONS}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
