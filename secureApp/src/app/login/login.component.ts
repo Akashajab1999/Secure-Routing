@@ -27,8 +27,9 @@ export class LoginComponent {
     
    //localStorage.setItem("jwt",response.token);
    localStorage.setItem("role",response.role);
-  //  this.loggedIn=true;
    console.log(response.role);
+   const role= this.svc.getRoleFromLSAToken();
+   console.log(role);
   })
 
   }
