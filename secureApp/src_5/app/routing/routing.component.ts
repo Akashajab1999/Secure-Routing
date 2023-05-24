@@ -20,7 +20,7 @@ export class RoutingComponent implements OnInit {
       this.statusAkash=true;
       
     }
-    if(this.role=="customer"){
+    if(this.role=="Customer"){
       this.statusRushikesh=true;
  
     }

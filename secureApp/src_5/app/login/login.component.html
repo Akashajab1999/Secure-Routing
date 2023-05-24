@@ -1,7 +1,7 @@
 <h1>Login Page</h1>
 
 <h3>Sign in here</h3>
-          <form #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)">
+          <form  (ngSubmit)="logIn()">
             <div class="inputBox">
               <label for="email">Email: </label>
               <input id="email" type="text" name="Email" placeholder="Email" [(ngModel)]="user.email">  
@@ -15,7 +15,7 @@
             <button type="button" class="btn btn-primary my-4" type="submit">Sign In </button>
           </form>
         
-<div *ngIf="validUser">
+<div *ngIf="loggedIn">
   <app-routing></app-routing>
 </div>
 
